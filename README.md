@@ -1,6 +1,10 @@
 ## Description
 
-Built with nest; caching strategy checks cache first for books and characters, then checks database, then makes a network request.
+Built with nest.js; 
+
+The caching strategy checks the cache first for books and characters (cheapest), then checks database (cheap), then makes a network request (expensive).
+
+This project relies on MySQL; set up a database, then configure the database settings in `ormconfig.json`.
 
 ## Setup
 
@@ -13,26 +17,8 @@ $ npm install
 ```bash
 # development
 $ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 ## Support
 
