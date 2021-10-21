@@ -6,29 +6,26 @@ export class StoryCharacter {
   @PrimaryColumn()
   id: number;
 
-  @Column()
-  title: string;
-
-  @Column()
+  @Column({ default: '' })
   name: string;
 
-  @Column()
+  @Column({ default: '' })
   gender: string;
 
-  @Column()
+  @Column({ default: '' })
   culture: string;
 
-  @Column()
+  @Column({ default: '' })
   born: string;
 
-  @Column()
+  @Column({ default: '' })
   died: string;
 
-  @Column('simple-array')
-  aliases: string[];
+  @Column('simple-array', { select: false })
+  aliases?: string[];
 
-  @Column('simple-array')
-  playedBy: string[];
+  @Column('simple-array', { select: false })
+  playedBy?: string[];
 
   @ManyToMany(() => Book, (book) => book.characters)
   books: Book[];

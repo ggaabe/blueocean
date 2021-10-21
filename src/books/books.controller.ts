@@ -25,6 +25,11 @@ export class BooksController {
     return this.booksService.findAll();
   }
 
+  @Get(':id/characters')
+  findWithCharacters(@Param('id') id: string) {
+    return this.booksService.findWithCharacters(+id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.booksService.findOne(+id);
